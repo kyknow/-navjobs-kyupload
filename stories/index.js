@@ -65,7 +65,7 @@ uploader.add('Renders', () => {
         },
       }}
       uploadOnSelection={uploadOnSelection}
-      onCoverFiles = {()=>console.log('覆盖')}
+      onCoverFiles={f => console.log('覆盖', f)}
     >
       {({ onFiles, startUpload, progress, complete, canceled, failed }) => (
         <div>

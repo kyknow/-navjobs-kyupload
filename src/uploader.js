@@ -37,8 +37,16 @@ export default class Uploader extends React.Component {
       });
     }
 
+    console.log('files ===>', files);
     if (onCoverFiles) {
-      onCoverFiles().then(({ response, error, aborted, status }) => {
+      onCoverFiles(files).then(({ response, error, aborted, status }) => {
+        console.log(
+          'oncoverfiles res ====> ',
+          response,
+          error,
+          aborted,
+          status
+        );
         if (error) {
           if (onError) {
             onError(error);
@@ -57,7 +65,7 @@ export default class Uploader extends React.Component {
             progress: 0,
           });
         this.setState({ response, status, complete: true });
-      })
+      });
     } else {
       Request({
         request,
@@ -85,9 +93,6 @@ export default class Uploader extends React.Component {
         this.setState({ response, status, complete: true });
       });
     }
-
-
-    
   }
 
   render() {
@@ -95,7 +100,7 @@ export default class Uploader extends React.Component {
 
     return children({
       ...this.state,
-      onFiles: files =>this.handleFiles(files),
+      onFiles: files => this.handleFiles(files),
       startUpload: () => this.handleUpload(),
     });
   }
