@@ -1,0 +1,35 @@
+exports[`Renders`] = `
+<div>
+  <div
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    style={
+      Object {
+        "overflow": "hidden",
+        "position": "relative",
+      }
+    }>
+    <div>
+      Click here and select a file!
+    </div>
+    <input
+      onChange={[Function]}
+      style={
+        Object {
+          "cursor": "pointer",
+          "height": "100%",
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+          "width": "100%",
+        }
+      }
+      type="file" />
+  </div>
+  <div
+    onClick={[Function]}>
+    Upload Files
+  </div>
+</div>
+`;
