@@ -23,7 +23,7 @@ export default class Uploader extends React.Component {
     if (this.props.uploadOnSelection) this.handleUpload(files);
   }
 
-  async handleUpload(files = this.state.files) {
+  handleUpload(files = this.state.files) {
     let { progress } = this.state;
     let { request, onComplete, onError, reset, onCoverFiles } = this.props;
     if (!files || !files.length) return;
