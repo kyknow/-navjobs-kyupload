@@ -37,15 +37,16 @@ export default class Uploader extends React.Component {
       });
     }
 
-    if (onCoverFiles) {
+    const onCoverFilesFn = () =>
       onCoverFiles(files).then(({ response, error, aborted, status }) => {
-        console.log(
-          'oncoverfiles res ====> ',
-          response,
-          error,
-          aborted,
-          status
-        );
+        // console.log(
+        //   'oncoverfiles res ====> ',
+        //   response,
+        //   error,
+        //   aborted,
+        //   status
+        // );
+
         if (error) {
           if (onError) {
             onError(error);
@@ -65,6 +66,13 @@ export default class Uploader extends React.Component {
           });
         this.setState({ response, status, complete: true });
       });
+
+    if (onCoverFiles) {
+      // 假性进度条
+      this.setState({
+        progress: 20,
+      });
+      onCoverFilesFn();
     } else {
       Request({
         request,
