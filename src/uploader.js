@@ -30,7 +30,7 @@ export default class Uploader extends React.Component {
 
     if (progress) {
       this.setState({
-        progress: 0.1,
+        progress: 5,
         error: false,
         aborted: false,
         complete: false,
@@ -39,14 +39,6 @@ export default class Uploader extends React.Component {
 
     const onCoverFilesFn = () =>
       onCoverFiles(files).then(({ response, error, aborted, status }) => {
-        // console.log(
-        //   'oncoverfiles res ====> ',
-        //   response,
-        //   error,
-        //   aborted,
-        //   status
-        // );
-
         if (error) {
           if (onError) {
             onError(error);
