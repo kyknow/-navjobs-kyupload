@@ -27,6 +27,8 @@ export default class UploadField extends React.Component {
         {handleHover ? children(hover) : children}
         <input
           type="file"
+          accept="image/*"
+          mutiple="mutiple"
           style={styles.input}
           onChange={e => {
             if (e.target.files && onFiles) onFiles(e.target.files);
