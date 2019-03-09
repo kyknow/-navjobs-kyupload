@@ -28,7 +28,6 @@ export default class UploadField extends React.Component {
         <input
           type="file"
           accept="image/*"
-          multiple="multiple"
           style={styles.input}
           onChange={e => {
             if (e.target.files && onFiles) onFiles(e.target.files);
